@@ -10,39 +10,84 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container">
-      <section class="hero">
-        <p class="tag">TOKYO / 2026.09.18</p>
-        <h1>Frontend Orbit 2026</h1>
-        <p>設計・パフォーマンス・プロダクト思考を横断する、1dayカンファレンス。</p>
-        <a class="ticket" href="#tickets">チケットを見る</a>
-      </section>
+    <div class="bg-layer"></div>
+    <header class="site-header container">
+      <a class="brand" href="#top">Frontend Orbit</a>
+      <button class="menu-toggle" aria-expanded="false" aria-label="メニュー">☰</button>
+      <nav class="nav-links">
+        <a href="#agenda">Agenda</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#voices">Voices</a>
+        <a href="#tickets">Tickets</a>
+      </nav>
+    </header>
 
-      <section class="agenda" id="agenda">
-        <h2>Agenda</h2>
-        <div class="list">
-          <article><span>10:00</span><p>Keynote: Product Velocity</p></article>
-          <article><span>13:00</span><p>Design Systems at Scale</p></article>
-          <article><span>15:30</span><p>Edge Rendering Workshop</p></article>
+    <main id="top" class="container">
+      <section class="hero reveal">
+        <span class="badge">TOKYO / 2026.09.18</span>
+        <div class="hero-grid">
+          <div>
+            <h1>Frontend Orbit 2026</h1>
+            <p class="lead">設計、パフォーマンス、プロダクト思考を横断する1dayイベント。現場で使える実践知を共有します。</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#tickets">チケットを見る</a>
+              <a class="btn ghost" href="#agenda">アジェンダを見る</a>
+            </div>
+          </div>
+          <aside class="hero-stats">
+            <article><strong data-count="18" data-suffix="本">0本</strong><span>セッション数</span></article>
+            <article><strong data-count="850" data-suffix="名">0名</strong><span>参加予定人数</span></article>
+            <article><strong data-count="3" data-suffix="トラック">0トラック</strong><span>同時開催</span></article>
+          </aside>
         </div>
       </section>
 
-      <section class="speakers">
-        <h2>Speakers</h2>
-        <div class="cards">
-          <article><h3>Aya S.</h3><p>Staff Engineer, SaaS Startup</p></article>
-          <article><h3>Ken T.</h3><p>Design Systems Lead</p></article>
-          <article><h3>Mai N.</h3><p>Web Platform Engineer</p></article>
+      <section class="section reveal" id="agenda">
+        <div class="section-head"><span class="eyebrow">AGENDA</span><h2>主要セッション</h2></div>
+        <div class="card-grid three">
+          <article class="card"><h3>Keynote 10:00</h3><p>Product Velocity を高める開発組織設計。</p><strong>Main Hall</strong></article>
+          <article class="card"><h3>Panel 13:00</h3><p>Design Systems を事業成長に接続する実例。</p><strong>Track B</strong></article>
+          <article class="card"><h3>Workshop 15:30</h3><p>Edge Rendering を体験するハンズオン。</p><strong>Track C</strong></article>
         </div>
       </section>
 
-      <section class="tickets" id="tickets">
-        <h2>Tickets</h2>
-        <p>Early Bird: <strong>¥8,000</strong> / Regular: <strong>¥12,000</strong></p>
+      <section class="section reveal" id="tracks">
+        <div class="section-head"><span class="eyebrow">TRACKS</span><h2>3つのテーマ</h2></div>
+        <div class="process-list">
+          <article><h3>Architecture</h3><p>大規模フロントエンドの設計と運用。</p></article>
+          <article><h3>Performance</h3><p>計測と改善を継続する実践アプローチ。</p></article>
+          <article><h3>Product</h3><p>ユーザー価値に直結する開発プロセス。</p></article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="voices">
+        <div class="section-head"><span class="eyebrow">PAST ATTENDEE VOICES</span><h2>昨年参加者の声</h2></div>
+        <div class="review-grid">
+          <blockquote>「翌週からチームに導入できる実践知が多かったです。」</blockquote>
+          <blockquote>「スピーカーの事例が具体的で、議論が深かったです。」</blockquote>
+          <blockquote>「同業の交流が生まれ、継続的な学びにつながりました。」</blockquote>
+        </div>
+      </section>
+
+      <section class="section reveal" id="tickets">
+        <div class="contact-panel">
+          <div>
+            <span class="eyebrow">TICKETS</span>
+            <h2>参加登録</h2>
+            <p>Early Bird: ¥8,000 / Regular: ¥12,000。請求書払いにも対応しています。</p>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="お名前" required />
+            <input type="email" placeholder="メールアドレス" required />
+            <textarea placeholder="所属・参加目的"></textarea>
+            <button type="submit" class="btn primary">登録する</button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <footer>© <span id="year"></span> Frontend Orbit</footer>
+    <footer class="container">© <span id="year"></span> Frontend Orbit</footer>
+    <div class="toast" id="toast">登録ありがとうございます。チケット案内を送信しました。</div>
     <script src="app.js"></script>
   </body>
 </html>
